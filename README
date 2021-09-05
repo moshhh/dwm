@@ -4,9 +4,14 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 
 modifications
 ===========================
+05/09/21
+added gruvbox colours
+increased font size
+changed keys 
+configured git
+
 04/09/21
 added dwmgaps
-
 modified modkey alt -> Mod4Key
 set rofi as launcher, changed launch key to XK_d
 removed ModMask|Shift for window kill
