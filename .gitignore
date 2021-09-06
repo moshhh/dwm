@@ -1,2 +1,4 @@
-*.diff
 # ignore diff files
+*.diff
+dwm.o
+dwm.png
