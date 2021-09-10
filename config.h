@@ -1,5 +1,5 @@
 /* See LICENSE file for copyright and license details. */
-
+#include <X11/XF86keysym.h>
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gappx     = 4;        /* gaps between windows */
@@ -71,10 +71,10 @@ static const char *termcmd[]  = { "kitty", NULL };
 static const char *firefox[] = {"firefox", NULL};
 static const char *thunar[] = {"thunar", NULL};
 static const char *slock[] = {"slock", NULL};
-static const char *volumeup[] = {"~/.config/scripts/volume_up.sh", NULL};
-static const char *volumedown[] = {"~/.config/scripts/volume_down.sh", NULL};
-static const char *volumetoggle[] = {"~/.config/scripts/volume_toggle.sh", NULL};
-static const char *microphonetoggle[] = {"~/.config/scripts/microphone_toggle.sh", NULL};
+static const char *volumeup[] = {"amixer" "set" " Master" "5%+", NULL};
+static const char *volumedown[] = {"amixer" "set" "Master" "5%-", NULL};
+static const char *volumetoggle[] = {"ammixer" "set" "Master" "toggle",  NULL};
+//static const char *microphonetoggle[] = {"~/.config/scripts/microphone_toggle.sh", NULL};
 
 //static const char *suspend[] = {"systemctl suspend", NULL};
 
@@ -121,9 +121,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 //	{ MODKEY|ControlMask|ShiftMask, XK_q,      
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-//	{ , 
-//	{ , 			XF86AudioLowerVolume, spawn, {.v = volumedown} },
-//	{ , 			XF86AudioMute, spawn, {.v = volumetoggle} },
+	{0,			XF86_AudioRaiseVolume, spawn, {.v = volumeup} },
+	{0, 			XF86_AudioLowerVolume, spawn, {.v = volumedown} },
+	{0, 			XF86_AudioMute, spawn, {.v = volumetoggle} },
 };
 
 /* button definitions */
