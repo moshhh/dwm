@@ -71,9 +71,9 @@ static const char *termcmd[]  = { "kitty", NULL };
 static const char *firefox[] = {"firefox", NULL};
 static const char *thunar[] = {"thunar", NULL};
 static const char *slock[] = {"slock", NULL};
-static const char *volumeup[] = {"amixer" "set" " Master" "5%+", NULL};
-static const char *volumedown[] = {"amixer" "set" "Master" "5%-", NULL};
-static const char *volumetoggle[] = {"ammixer" "set" "Master" "toggle",  NULL};
+static const char *volumeup[] = {"pactl", "set-sink-volume", "0", "+5%", NULL};
+static const char *volumedown[] = {"pactl", "set-sink-volume", "0", "-5%", NULL};
+static const char *volumetoggle[] = {"pactl", "set-sink-mute", "0", "toggle",  NULL};
 //static const char *microphonetoggle[] = {"~/.config/scripts/microphone_toggle.sh", NULL};
 
 //static const char *suspend[] = {"systemctl suspend", NULL};
@@ -111,7 +111,6 @@ static Key keys[] = {
  	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 4  } },	
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
-
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
