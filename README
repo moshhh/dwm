@@ -4,6 +4,10 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 
 modifications
 ===========================
+11/09/21
+modified audio keybinds and added signal calls as per lukesmithxyz for auto-updating blocks.
+readded dmenu
+
 05/09/21
 patched autostart
 added gruvbox colours
