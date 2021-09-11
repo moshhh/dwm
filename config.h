@@ -73,9 +73,9 @@ static const char *firefox[] = {"firefox", NULL};
 static const char *thunar[] = {"thunar", NULL};
 static const char *slock[] = {"slock", NULL};
 // from palopezv/dwm_config_pulseaudio
-static const char *volumeup[] = {"/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", "&&", "pkill", "-RTMIN+10", "dwmblocks", NULL};
-static const char *volumedown[] = {"/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", "&&", "pkill", "-RTMIN+10", "dwmblocks", NULL};
-static const char *volumetoggle[] = {"/usr/bin/pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", "&&", "pkill", "-RTMIN+10", "dwmblocks",   NULL};
+static const char *volumeup[] = {"~/.config/scripts/volume_up.sh", NULL};
+static const char *volumedown[] = {"~/.config/scripts/volume_down.sh", NULL};
+static const char *volumetoggle[] = {"~/.config/scripts/volume_mute.sh", NULL};
 //static const char *microphonetoggle[] = {"~/.config/scripts/microphone_toggle.sh", NULL};
 
 //static const char *suspend[] = {"systemctl suspend", NULL};
