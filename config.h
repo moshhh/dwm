@@ -5,8 +5,8 @@ static const unsigned int gappx     = 4;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code:size=12:style=bold", "Fontawesome:size=12" };
-static const char dmenufont[]       = "Fira Code:size=12";
+static const char *fonts[]          = { "iosevka:size=12:style=light", "Fontawesome:size=12" };
+static const char dmenufont[]       = "iosevka:size=12:style=light";
 // background colour
 static const char col_gray1[]       = "#282828";
 // inactive window border colour
