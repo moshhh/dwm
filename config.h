@@ -5,9 +5,9 @@ static const unsigned int gappx     = 4;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "iosevka:size=12:style=light", "Fontawesome:size=12" };
-static const char dmenufont[]       = "iosevka:size=12:style=light";
-// background colour
+static const char fonts[]            = "iosevka:size=12:style=bold";
+static const char dmenufont[]       = "iosevka:size=12";
+/* background colour
 static const char col_gray1[]       = "#282828";
 // inactive window border colour
 static const char col_gray2[]       = "#928374";
@@ -18,9 +18,20 @@ static const char col_gray4[]       = "#ebdbb2";
 // top bar second colour and active window border colour
 static const char col_cyan[]        = "#458588";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
+	               fg         bg         border   
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+*/
+static char normbgcolor[]           = "#222222";
+static char normbordercolor[]       = "#444444";
+static char normfgcolor[]           = "#bbbbbb";
+static char selfgcolor[]            = "#eeeeee";
+static char selbordercolor[]        = "#005577";
+static char selbgcolor[]            = "#005577";
+static char *colors[][3] = {
+       /*               fg           bg           border   */
+       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
 
 /* tagging */
@@ -49,6 +60,24 @@ static const Layout layouts[] = {
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
+/* Xresources preferences to load at startup */
+ ResourcePref resources[] = {
+                { "font",               STRING,  &fonts },
+                { "dmenufont",          STRING,  &dmenufont },
+                { "normbgcolor",        STRING,  &normbgcolor },
+                { "normbordercolor",    STRING,  &normbordercolor },
+                { "normfgcolor",        STRING,  &normfgcolor },
+                { "selbgcolor",         STRING,  &selbgcolor },
+                { "selbordercolor",     STRING,  &selbordercolor },
+                { "selfgcolor",         STRING,  &selfgcolor },
+                { "borderpx",           INTEGER, &borderpx },
+                { "snap",               INTEGER, &snap },
+                { "showbar",            INTEGER, &showbar },
+                { "topbar",             INTEGER, &topbar },
+                { "nmaster",            INTEGER, &nmaster },
+                { "resizehints",        INTEGER, &resizehints },
+                { "mfact",              FLOAT,   &mfact },
+ };
 
 /* key definitions */
 #define MODKEY Mod4Mask
@@ -66,7 +95,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of , manipulated in spawn() */
 // static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *rofi[] = {"rofi", "-show", "drun", NULL};
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *firefox[] = {"firefox", NULL};
