@@ -5,18 +5,18 @@ static const unsigned int gappx     = 4;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "iosevka:size=12:style=bold", "Fontawesome:size=12" };
-static const char dmenufont[]       = "iosevka:size=12";
+static const char *fonts[]          = { "monospace:size=12:style=bold", "Fontawesome:size=12" };
+static const char dmenufont[]       = "monospace:size=12:style=bold";
 // background colour
-static const char col_gray1[]       = "#282828";
+static const char col_gray1[]       = "#282a36";
 // inactive window border colour
-static const char col_gray2[]       = "#928374";
+static const char col_gray2[]       = "#44475a";
 // font colour
-static const char col_gray3[]       = "#a89984";
+static const char col_gray3[]       = "#f8f8f2";
 // current tag and current window font colour 
-static const char col_gray4[]       = "#ebdbb2";
+static const char col_gray4[]       = "#f8f8f2";
 // top bar second colour and active window border colour
-static const char col_cyan[]        = "#458588";
+static const char col_cyan[]        = "#bd93f9";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -77,8 +77,8 @@ static const char *slock[] = {"slock", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = rofi } },
-	{ MODKEY|ShiftMask, 		XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = rofi } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = firefox} },
 	{ MODKEY,                       XK_n,      spawn,          {.v = thunar} },
